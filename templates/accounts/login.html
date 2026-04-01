@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Login | Namma Metro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background:
+                radial-gradient(circle at 10% 20%, #1e3a8a 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, #020617 0%, transparent 40%),
+                #0f172a;
+        }
+
+        .login-card {
+            background: #ffffff;
+            width: 380px;
+            padding: 35px 30px;
+            border-radius: 16px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+            text-align: center;
+        }
+
+        .login-card h2 {
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .login-card p {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 25px;
+        }
+
+        .login-card input {
+            width: 100%;
+            padding: 12px 14px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        .login-card button {
+            width: 100%;
+            padding: 12px;
+            background: #2563eb;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .login-card button:hover {
+            background: #1d4ed8;
+        }
+
+        .links {
+            margin-top: 18px;
+            font-size: 14px;
+        }
+
+        .links a {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .links a:hover {
+            text-decoration: underline;
+        }
+
+        .back-home {
+            margin-top: 12px;
+            display: inline-block;
+        }
+
+        .error {
+            color: red;
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="login-card">
+
+    <h2>👤 User Login</h2>
+    <p>Login to access Namma Metro services & analytics</p>
+
+    {% if error %}
+        <div class="error">{{ error }}</div>
+    {% endif %}
+
+    <form method="post">
+        {% csrf_token %}
+
+        <input type="text" name="username" placeholder="Email / Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+
+        <button type="submit">Login</button>
+    </form>
+
+    <div class="links">
+        <p>
+            Not registered yet?
+            <a href="{% url 'accounts:register' %}">Create an account</a>
+        </p>
+
+        <p>
+            <a href="{% url 'accounts:forgot_password' %}">Forgot password?</a>
+        </p>
+
+        <a href="/" class="back-home">← Back to Home</a>
+    </div>
+</div>
+
+</body>
+</html>

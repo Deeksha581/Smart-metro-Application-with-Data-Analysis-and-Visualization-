@@ -1,0 +1,112 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Payments | Namma Metro</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    body{font-family:Poppins, sans-serif;background:#f4f6f9;}
+    .hero{
+      background:linear-gradient(135deg,#0d6efd,#0bbcd6);
+      color:#fff;padding:70px 20px;text-align:center;
+    }
+    .card-box{
+      background:linear-gradient(180deg,#ffffff,#f7f9fc);
+    border-radius:24px;
+    padding:24px;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    position:relative;
+    box-shadow:0 20px 40px rgba(0,0,0,0.08);
+    transition:.45s;
+    overflow:hidden;
+    }
+    .card-box:hover{transform:translateY(-10px);box-shadow:0 20px 40px rgba(0,0,0,.18);}
+    .thumb{width:100%;height:170px;object-fit:cover;border-radius:14px;margin-bottom:14px;}
+    .btn{border-radius:30px;font-weight:700;}
+    .note{color:#d32f2f;font-weight:600;}
+  </style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>Payments & Metro Services</h1>
+  <p>Choose Token Ticket, Smart Card, Pass, Fare Check, or Online Payment</p>
+</div>
+
+<div class="container my-5">
+
+  {% if messages %}
+    <div class="mb-3">
+      {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} mb-2">{{ message }}</div>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+
+  <div class="row g-4 mt-2">
+
+    <!-- 1) Token -->
+    <div class="col-md-4">
+      <div class="card-box">
+        <img class="thumb" src="{% static 'images/token.jpg' %}" alt="Token Ticket">
+        <h4>🎫 Token Ticket</h4>
+        <p>Select source & destination, view fare rules, then pay using UPI.</p>
+        <a class="btn btn-primary w-100" href="/metro/token/">Buy Token Ticket</a>
+      </div>
+    </div>
+
+    <!-- 2) Metro Card -->
+    <div class="col-md-4">
+      <div class="card-box">
+        <img class="thumb" src="{% static 'images/metrocard.jpg' %}" alt="Metro Card">
+        <h4>💳 Metro Smart Card</h4>
+        <p>Check card details, available balance and recharge (dataset users only).</p>
+        <a class="btn btn-success w-100" href="/metro/card/">Open Smart Card</a>
+      </div>
+    </div>
+
+    <!-- 3) Online Payment -->
+    <div class="col-md-4">
+      <div class="card-box">
+        <img class="thumb" src="{% static 'images/onlinepayment.jpg' %}" alt="Online Payment">
+        <h4>📱 Online Payment</h4>
+        <p>UPI / Debit / Credit Redirect to UPI app using deep-link.</p>
+        <a class="btn btn-info w-100 text-white" href="/metro/online/">Pay Online</a>
+      </div>
+    </div>
+
+    <!-- 4) Pass -->
+    <div class="col-md-6">
+      <div class="card-box">
+        <h4>🧾 Pass System (Daily Traveller)</h4>
+        <p>Monthly/Weekly passes for regular passengers .</p>
+        <a class="btn btn-dark w-100" href="/metro/pass/">View Pass Options</a>
+      </div>
+    </div>
+
+    <!-- 5) Fare -->
+    <div class="col-md-6">
+      <div class="card-box">
+        <h4>💰 Fare Check</h4>
+        <p>Check price details from source to destination before travel.</p>
+        <a class="btn btn-warning w-100" href="/metro/fare/">Check Fare</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div class="text-center mt-5">
+        <a href="/accounts/user-dashboard/" class="btn btn-outline-primary px-4 py-2">
+            ⬅ Back to Travel Guide
+        </a>
+    </div>
+</body>
+</html>

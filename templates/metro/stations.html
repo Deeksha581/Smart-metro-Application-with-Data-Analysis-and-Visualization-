@@ -1,0 +1,172 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bangalore Metro Stations | Namma Metro</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f4f6fb, #eef1f8);
+        }
+
+        .page-header {
+            text-align: center;
+            padding: 50px 20px 30px;
+        }
+
+        .page-header h1 {
+            font-family: 'Playfair Display', serif;
+            color: #4a148c;
+            font-size: 3rem;
+        }
+
+        .card-box {
+            background: #fff;
+            border-radius: 20px;
+            padding: 35px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 20px;
+        }
+
+        .purple { border-left: 6px solid #6a1b9a; }
+        .green { border-left: 6px solid #2e7d32; }
+        .yellow { border-left: 6px solid #f9a825; }
+        .blue { border-left: 6px solid #1565c0; }
+
+        .station-list li {
+            padding: 6px 0;
+            border-bottom: 1px dashed #ddd;
+        }
+
+        footer {
+            background: #1e1e1e;
+            color: #ccc;
+            padding: 15px;
+            text-align: center;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="page-header" data-aos="fade-down">
+    <h1>Bangalore Metro Stations</h1>
+    <p>Line-wise station stops to help passengers plan their journey easily</p>
+</div>
+
+<div class="container">
+
+    <!-- PURPLE LINE -->
+    <div class="card-box purple" data-aos="fade-right">
+        <h2 class="section-title">🟣 Purple Line (East ↔ West)</h2>
+        <p><strong>Route:</strong> Whitefield (Kadugodi) → Challaghatta</p>
+        <ul class="station-list">
+            <li>Whitefield (Kadugodi)</li>
+            <li>Hopefarm Channasandra</li>
+            <li>KR Puram</li>
+            <li>Baiyappanahalli</li>
+            <li>Indiranagar</li>
+            <li>Halasuru</li>
+            <li>Trinity</li>
+            <li>MG Road</li>
+            <li>Cubbon Park</li>
+            <li>Vidhana Soudha</li>
+            <li>Majestic (Interchange)</li>
+            <li>Vijayanagara</li>
+            <li>Kengeri</li>
+            <li>Challaghatta</li>
+        </ul>
+    </div>
+
+    <!-- GREEN LINE -->
+    <div class="card-box green" data-aos="fade-left">
+        <h2 class="section-title">🟢 Green Line (North ↔ South)</h2>
+        <p><strong>Route:</strong> Madavara → Silk Institute</p>
+        <ul class="station-list">
+            <li>Madavara</li>
+            <li>Nagasandra</li>
+            <li>Yeshwanthpura</li>
+            <li>Sandal Soap Factory</li>
+            <li>Mahalakshmi</li>
+            <li>Rajajinagar</li>
+            <li>Majestic (Interchange)</li>
+            <li>Chickpet</li>
+            <li>KR Market</li>
+            <li>Lalbagh</li>
+            <li>Banashankari</li>
+            <li>Yelachenahalli</li>
+            <li>Silk Institute</li>
+        </ul>
+    </div>
+
+    <!-- YELLOW LINE -->
+    <div class="card-box yellow" data-aos="fade-right">
+        <h2 class="section-title">🟡 Yellow Line (South-East Corridor)</h2>
+        <p><strong>Route:</strong> RV Road → Bommasandra</p>
+        <ul class="station-list">
+            <li>RV Road (Interchange)</li>
+            <li>Jayadeva Hospital</li>
+            <li>BTM Layout</li>
+            <li>Central Silk Board</li>
+            <li>Bommanahalli</li>
+            <li>Electronic City</li>
+            <li>Bommasandra</li>
+        </ul>
+    </div>
+
+    <!-- BLUE LINE -->
+    <div class="card-box blue" data-aos="fade-left">
+        <h2 class="section-title">🔵 Blue Line (Airport Corridor – Upcoming)</h2>
+        <p><strong>Route:</strong> Central Silk Board → Airport</p>
+        <ul class="station-list">
+            <li>Central Silk Board</li>
+            <li>HSR Layout</li>
+            <li>Bellandur</li>
+            <li>Marathahalli</li>
+            <li>KR Puram (Interchange)</li>
+            <li>Nagavara</li>
+            <li>Hebbal</li>
+            <li>Kempegowda International Airport</li>
+        </ul>
+    </div>
+
+    <!-- BACK BUTTON -->
+    <div class="text-center mb-5">
+        <a href="{% url 'accounts:user_dashboard' %}"
+           class="btn btn-outline-primary btn-lg fw-bold px-5 shadow-sm">
+            ⬅ Back to Travel Guide Dashboard
+        </a>
+    </div>
+
+</div>
+
+<footer>
+    © 2025 | Final Year MCA Project | Bangalore Metro Analytics System
+</footer>
+
+<!-- AOS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+    AOS.init({ duration: 900, once: true });
+</script>
+
+</body>
+</html>
