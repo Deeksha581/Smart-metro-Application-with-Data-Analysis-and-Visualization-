@@ -29,6 +29,7 @@ This project analyzes metro passenger data to understand usage patterns and impr
 - `templates/` → Frontend templates
 - `static/` → CSS/JS files
 - `manage.py` → Django main file
+
   Smart-metro-Application-with-Data-Analysis-and-Visualization/
 │
 ├── accounts/ # User authentication (login/register)
@@ -49,9 +50,6 @@ This project analyzes metro passenger data to understand usage patterns and impr
 ├── db.sqlite3 # Database file
 │
 └── requirements.txt # Project dependencies
-
-
-
 ---
 
 ## ▶️ How to Run
