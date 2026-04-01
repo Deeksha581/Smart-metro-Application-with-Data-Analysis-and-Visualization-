@@ -51,6 +51,16 @@ This project analyzes metro passenger data to understand usage patterns and impr
 │
 └── requirements.txt # Project dependencies
 
+
+
+
+
+
+
+
+
+
+
 ## ▶️ How to Run
 1. Clone the repository  
 2. Install required libraries  
