@@ -50,7 +50,6 @@ This project analyzes metro passenger data to understand usage patterns and impr
 ├── db.sqlite3 # Database file
 │
 └── requirements.txt # Project dependencies
----
 
 ## ▶️ How to Run
 1. Clone the repository  
